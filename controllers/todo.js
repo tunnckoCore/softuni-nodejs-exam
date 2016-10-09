@@ -16,9 +16,7 @@ exports.index = function * index (next) {
 
 // GET /todos/new
 exports.new = function * new_ (next) {
-  this.render('todos/new', this.config({
-    // form: form.toString()
-  }))
+  this.render('todos/new', this.data)
 }
 
 // POST /todos

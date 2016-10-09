@@ -1,27 +1,18 @@
 'use strict'
 
 var bel = require('bel')
+var layout = require('../layout')
+var extend = require('extend-shallow')
 
 module.exports = function index (state) {
-  // @todo extract duplicate code
-  return bel`<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>${state.title} - ${state.project}</title>
-    <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,">
-  </head>
-  <body>
-    <h1>${state.title}</h1>
-    <p>${state.description}</p>
-    <ul>${state.menu.map((item) => {
-      return bel`<li><a href="${item.link}">${item.text}</a></li>`
-    })}
-    </ul>
-    <hr>
+  state = extend({}, state, {
+    title: state.pages.index.title,
+    body: bel`<section>
+    <h1>${state.pages.index.title}</h1>
+    <p>${state.pages.index.descr}</p>
     ${state.todos.length ? '<ul>' + state.todos.map(function (todo) {
       return bel`<li>${todo.title} / ${todo.state}</li>`
-    }) : 'List is empty... Go create one.'}
-  </body>
-</html>`
+    }) + '</ul>' : 'List is empty... Go create one.'}</section>`
+  })
+  return bel`${layout(state)}`
 }

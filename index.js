@@ -24,7 +24,7 @@ app
     ctx.data = require('./config')
     ctx.config = function config (data) {
       ctx.data = extend({}, ctx.data, data)
-      return ctx
+      return ctx.data
     }
     if (ctx.url === '/') {
       ctx.render('landing', ctx.data)

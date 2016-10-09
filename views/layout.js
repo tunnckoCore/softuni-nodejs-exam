@@ -11,6 +11,10 @@ module.exports = function index (state) {
     <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,">
   </head>
   <body>
+    <ul>${state.menu.map((item) => {
+      return bel`<li><a href="${item.link}">${item.text}</a></li>`
+    })}</ul>
+    <hr>
     ${state.body}
   </body>
 </html>`
