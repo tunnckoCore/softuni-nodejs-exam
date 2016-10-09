@@ -1,6 +1,6 @@
 {
   "name": "softuni-nodejs-exam",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Scaffold project for Software University Bulgaria. Final exam of Nodejs Development Course.",
   "repository": "tunnckoCore/softuni-nodejs-exam",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
