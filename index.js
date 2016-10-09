@@ -15,12 +15,15 @@ var body = require('koa-better-body')
 var extend = require('extend-shallow')
 var Resource = require('koa-resource-router')
 
+var store = require('data-store')('todos', {cwd: process.cwd()})
+
 app
   .use(views('./views'))
   .use(body({
     uploadDir: './images'
   }))
   .use(function (ctx, next) {
+    ctx.store = store
     ctx.data = require('./config')
     ctx.config = function config (data) {
       ctx.data = extend({}, ctx.data, data)

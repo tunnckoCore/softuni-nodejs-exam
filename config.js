@@ -8,7 +8,6 @@
 'use strict'
 
 module.exports = {
-  db: {},
   project: 'SoftUni Restful Koa',
   menu: [
     { text: 'Home', link: '/' },

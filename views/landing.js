@@ -1,7 +1,7 @@
 'use strict'
 
 var bel = require('bel')
-var layout = require('./layout')
+var layout = require('./layouts/default')
 var extend = require('extend-shallow')
 
 module.exports = function index (state) {

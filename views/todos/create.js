@@ -2,16 +2,17 @@
 
 var bel = require('bel')
 var layout = require('../layouts/default')
-var createForm = require('../elements/createForm')
 var extend = require('extend-shallow')
 
 module.exports = function new_ (state) {
+  var title = state.isError ? 'Error - Create TODO' : 'Okey - Create TODO'
+
   state = extend({}, state, {
-    title: state.pages.new.title,
+    title: title,
     body: bel`<section>
-    <h1>${state.pages.new.title}</h1>
-    <p>${state.pages.new.descr}</p>
-    ${createForm()}</section>`
+      <h1>${title}</h1>
+      <p>${state.message}</p>
+    </section>`
   })
   return bel`${layout(state)}`
 }
