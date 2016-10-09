@@ -7,7 +7,7 @@ module.exports = function index (state) {
   <head>
     <meta charset="utf-8">
     <title>${state.title} - ${state.project}</title>
-    <link rel="shortcut icon"type="image/x-icon" href="data:image/x-icon;,">
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
   </head>
   <body>
     <ul>${state.menu.map((item) => {
