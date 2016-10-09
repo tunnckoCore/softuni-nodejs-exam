@@ -32,6 +32,9 @@ app
     if (ctx.url === '/') {
       ctx.render('landing', ctx.data)
     }
+    var body = ctx.body
+    ctx.body = '<!doctype html>'
+    ctx.body += body
     return next()
   })
 

@@ -3,8 +3,7 @@
 var bel = require('bel')
 
 module.exports = function index (state) {
-  return bel`<!DOCTYPE html>
-<html lang="en" dir="ltr">
+  return bel`<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>${state.title} - ${state.project}</title>
